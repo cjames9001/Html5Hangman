@@ -2,9 +2,9 @@ var http = require('http');
 
 exports.generateHttpOptionsForHttpRequest = function(){
 	httpOptions = {
-	  	host: 'dictionary-thesaurus.com',
+	  	host: 'desiquintans.com',
 	  	port: 80,
-	  	path: '/wordlists/Nouns%285,449%29.txt'
+	  	path: '/downloads/nounlist.txt'
 	}
 	return httpOptions;
 };
