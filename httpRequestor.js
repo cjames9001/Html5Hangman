@@ -4,7 +4,7 @@ exports.generateHttpOptionsForHttpRequest = function(){
 	httpOptions = {
 	  	host: 'desiquintans.com',
 	  	port: 80,
-	  	path: '/downloads/nounlist.txt'
+	  	path: 'downloads/nounlist.txt'
 	}
 	return httpOptions;
 };
