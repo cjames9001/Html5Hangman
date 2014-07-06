@@ -6,11 +6,12 @@ exports.canary = function(test){
 }
 
 exports.testGenerateHttpOptionsForHttpRequest = function(test){
-	test.deepEqual({
-		host: 'dictionary-thesaurus.com',
+	var httpOptions = {
+	  	host: 'www.desiquintans.com',
 	  	port: 80,
-	  	path: '/wordlists/Nouns%285,449%29.txt'}, 
-	  	httpRequestor.generateHttpOptionsForHttpRequest());
+	  	path: '/downloads/nounlist.txt'
+	}
+	test.deepEqual(httpOptions,	httpRequestor.generateHttpOptionsForHttpRequest());
 	test.done();
 }
 
@@ -18,7 +19,7 @@ exports.testGetWordsFromWebResponse = function(test){
 	var httpOptions = httpRequestor.generateHttpOptionsForHttpRequest();
 	var httpResponseHandlerFunction = function(error, content){
 		test.equal('a', content[0]);
-		test.equal('w', content[content.length-7]);
+		test.equal('z', content[content.length-7]);
 		test.done();
 	}
 	httpRequestor.getHttpResponse(httpOptions, httpResponseHandlerFunction);
