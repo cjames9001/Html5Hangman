@@ -9,7 +9,7 @@ exports.testGenerateHttpOptionsForHttpRequest = function(test){
 	var httpOptions = {
 	  	host: 'www.desiquintans.com',
 	  	port: 80,
-	  	path: '/downloads/nounlist.txt'
+	  	path: '/downloads/nounlist/nounlist.txt'
 	}
 	test.deepEqual(httpOptions,	httpRequestor.generateHttpOptionsForHttpRequest());
 	test.done();
