@@ -162,7 +162,7 @@ exports.testSplitListIntoWordsWhenWordsHaveHypens = function(test){
 	test.done();
 }
 
-exports.testSplitListIntoWordsWhenListHasHypensAndAstrixes = function(test){
-	test.deepEqual(['f', 'it'], hangmanGame.splitWordListIntoWords('f***\ni-t'));
+exports.testSplitListIntoWordsWhenListHasHypensSpacesAndAstrixes = function(test){
+	test.deepEqual(['f', 'it', 'northamerica'], hangmanGame.splitWordListIntoWords('f***\ni-t\nnorth america'));
 	test.done();
 }

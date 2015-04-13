@@ -79,6 +79,6 @@ exports.splitWordListIntoWords = function(listOfWords){
 		}
 		wordArray.forEach(replaceInvalidCharacters);
 	}
-	filterOutInvalidCharacters(['-', '*'], splitWords);
+	filterOutInvalidCharacters(['-', '*', ' '], splitWords);
 	return splitWords;
 }
