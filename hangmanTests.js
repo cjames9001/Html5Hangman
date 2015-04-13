@@ -156,3 +156,13 @@ exports.testSplitWordListIntoWordsUsingUnixNewLine = function(test){
 	test.deepEqual(['how', 'fun', 'is', 'javascript'], hangmanGame.splitWordListIntoWords('how\rfun\ris\rjavascript'));
 	test.done();
 }
+
+exports.testSplitListIntoWordsWhenWordsHaveHypens = function(test){
+	test.deepEqual(['hypens', 'arent', 'allowed'], hangmanGame.splitWordListIntoWords('hypens\narent\nall-owed'));
+	test.done();
+}
+
+exports.testSplitListIntoWordsWhenListHasHypensAndAstrixes = function(test){
+	test.deepEqual(['f', 'it'], hangmanGame.splitWordListIntoWords('f***\ni-t'));
+	test.done();
+}

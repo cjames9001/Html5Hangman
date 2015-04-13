@@ -49,7 +49,7 @@ exports.isGameWon = function(word, guessedLetters){
 	}
 
 	function isBigEnough(element, index, array) {
-		if($.inArray(element, correctlyGuessedLetters) === -1){
+		if(correctlyGuessedLetters.indexOf(element) === -1){
 			return false;
 		}
 		return true;
@@ -66,5 +66,19 @@ exports.splitWordListIntoWords = function(listOfWords){
 		return false;
 	}
 	splitWords = listOfWords.split(/\n|\r/g).filter(notAnEmptyWord);
+
+	var filterOutInvalidCharacters = function(invalidCharacters, wordArray){
+		var replaceInvalidCharacters = function(word, index){
+			var removeInvalidCharacter = function(characterToRemove){
+				if(word.indexOf(characterToRemove) !== -1){
+					var regex = new RegExp('\\' + characterToRemove, 'g');
+					wordArray[index] = word.replace(regex, '');
+				}
+			}
+			invalidCharacters.forEach(removeInvalidCharacter);
+		}
+		wordArray.forEach(replaceInvalidCharacters);
+	}
+	filterOutInvalidCharacters(['-', '*'], splitWords);
 	return splitWords;
 }
